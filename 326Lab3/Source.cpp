@@ -1,4 +1,5 @@
 #include <iostream>
+#include "Polynomial.h"
 
 int reverseNum(int num);
 int recursiveReverse(int num, int reversedNum);
@@ -40,74 +41,24 @@ void Problem2() {
 void Problem3() {
 
 	int degree = 0;
+	int x = 0;
 
 	std::cout << "Enter highest degree of the polynomial" << std::endl;
 	std::cin >> degree;
 
-	int* ptr = new int[degree + 1];
+	Polynomial poly(degree);
 
-	std::cout << "Enter numbers:" << std::endl;
- 
-	for (int i = 0; i <= degree; i++) {
-
-		std::cin >> ptr[i];
-
-	}
+	poly.fillArray();
+	poly.printPolynomial();
 
 	std::cout << std::endl;
 
-	int tempDegree = degree;
+	std::cout << "Enter the value of x:" << std::endl;
+	std::cin >> x;
 
-	bool firstNum = false;
+	std::cout << std::endl;
 
-	for (int j = 0; j <= degree; j++) {
-        
-		if (ptr[j] == 0) {
-			
-			tempDegree--;
-            
-			continue;
-		}
-
-		if (firstNum) {
-			std::cout << " + ";
-		}
-
-		if (tempDegree > 1) {
-			
-			if (ptr[j] != 1) {
-
-				std::cout << ptr[j];
-
-			}
-
-			std::cout << "x^" << tempDegree;
-
-		}
-
-		else if (tempDegree == 1) {
-			
-			if (ptr[j] != 1) {
-
-				std::cout << ptr[j];
-
-			}
-
-			std::cout << "x";
-
-		 }
-
-		else {
-
-			std::cout << ptr[j];
-		}
-
-		tempDegree--;
-
-		firstNum = true;
-
-	}
-
+	std::cout << poly.evalPolynomial(x);
 }
 
 int reverseNum(int num) {
