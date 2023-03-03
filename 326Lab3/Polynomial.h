@@ -4,11 +4,14 @@
 class Polynomial {
 
 public:
+	Polynomial();
 	Polynomial(int degree);
 	void fillArray();
 	void printPolynomial();
+	void numArray(int num, int index);
+	int getDegree();
+	int getElement(int index);
 	int evalPolynomial(int x);
-
 
 private:
 	int degree;
