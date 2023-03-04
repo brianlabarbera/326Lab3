@@ -7,15 +7,58 @@ void addPolynomial(Polynomial poly1, Polynomial poly2);
 void Problem1();
 void Problem2();
 void Problem3();
+void problemChoice();
 
 int main() {
 
 
-	Problem3();
+	problemChoice();
 
 
 	return 0;
 }
+
+void problemChoice() {
+
+	int choice = 0;
+
+	do {
+
+	std::cout << "Enter 1 to reverse a number" << std::endl;
+
+	std::cout << "or" << std::endl;
+
+	std::cout << "Enter 2 to recursively reverse a number" << std::endl;
+
+	std::cout << "or" << std::endl;
+
+	std::cout << "Enter 3 for polynomials" << std::endl;
+
+	std::cin >> choice;
+
+	std::cout << std::endl;
+
+		if (choice == 1) {
+
+			Problem1();
+
+		}
+
+		if (choice == 2) {
+
+			Problem2();
+
+		}
+
+		if (choice == 3) {
+
+			Problem3();
+
+		}
+
+	} while (choice != 1 && choice != 2 && choice != 3);
+}
+
 
 void Problem1() {
 
@@ -23,6 +66,8 @@ void Problem1() {
 
 	std::cout << "Enter an integer:" << std::endl;
 	std::cin >> num;
+
+	std::cout << std::endl;
 
 	std::cout << reverseNum(num);
 
@@ -34,6 +79,8 @@ void Problem2() {
 
 	std::cout << "Enter an integer:" << std::endl;
 	std::cin >> num;
+
+	std::cout << std::endl;
 
 	std::cout << recursiveReverse(num, 0);
 
@@ -47,6 +94,9 @@ void Problem3() {
 	Polynomial poly;
 
 	poly.fillArray();
+
+	std::cout << std::endl;
+
 	poly.printPolynomial();
 
 	std::cout << std::endl;
@@ -56,13 +106,15 @@ void Problem3() {
 
 	std::cout << std::endl;
 
-	std::cout << poly.evalPolynomial(x);
+	std::cout << "Result of the polynomial is " << poly.evalPolynomial(x) << std::endl;
 
 	std::cout << std::endl;
 
 
 		std::cout << "Would you like to add two polynomials? Y/N" << std::endl;
 		std::cin >> choice;
+
+		std::cout << std::endl;
 
 		if (choice == 'Y' || choice == 'y') {
 			

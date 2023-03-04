@@ -11,6 +11,8 @@ Polynomial::Polynomial() {
 	std::cout << "Enter highest degree of the polynomial" << std::endl;
 	std::cin >> degree;
 
+	std::cout << std::endl;
+
 	this->degree = degree;
 
 	ptr = new int[degree + 1];
@@ -90,7 +92,11 @@ void Polynomial::printPolynomial() {
 
 		firstNum = true;
 
+
 	}
+
+	std::cout << std::endl;
+
 }
 
 int Polynomial::getDegree() {
